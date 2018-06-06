@@ -40,7 +40,7 @@ window.renderStatistics = function (ctx, players, times) {
   for (var i = 0; i < players.length; i++) {
     ctx.fillText(players[i], CLOUD_X + GAP + (GAP + BAR_WIDTH) * i, CLOUD_HEIGHT - CLOUD_Y);
     ctx.fillText(Math.floor(times[i]), CLOUD_X + GAP + (GAP + BAR_WIDTH) * i, CLOUD_HEIGHT - (TEXT_HEIGHT * 2) - VERTICAL_GAP
-      - (-((barHeight * times[i]) / maxTime)));
+     + (barHeight * times[i]) / maxTime);
     ctx.fillRect(CLOUD_X + GAP + (GAP + BAR_WIDTH) * i, CLOUD_HEIGHT - VERTICAL_GAP - TEXT_HEIGHT, BAR_WIDTH,
       (barHeight * times[i]) / maxTime);
   }
