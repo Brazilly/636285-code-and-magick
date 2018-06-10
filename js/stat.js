@@ -26,6 +26,10 @@ var getMaxElement = function (arr) {
   return maxElement;
 };
 
+function getRandomBlue() {
+  return 'rgba(0,0,255,' + Math.random() + ')';
+};
+
 window.renderStatistics = function (ctx, players, times) {
   renderCloud(ctx, 110, 20, 'rgba(0, 0, 0, 0.7)');
   renderCloud(ctx, 100, 10, '#fff');
@@ -36,13 +40,6 @@ window.renderStatistics = function (ctx, players, times) {
   ctx.fillText('Список результатов:', CLOUD_X + GAP, CLOUD_Y + VERTICAL_GAP + TEXT_HEIGHT + TEXT_HEIGHT);
 
   var maxTime = getMaxElement(times);
-
-  function getRandomBlue() {
-    var r = function () {
-      return Math.random()
-    };
-    return "rgb(0,0,255," + r() + ")";
-  }
 
   for (var i = 0; i < players.length; i++) {
     if (players[i] === 'Вы') {
